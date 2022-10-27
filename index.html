@@ -3,16 +3,24 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
-
     <script src="https://jsgame.bbz.cloud/scripts/v1/collision.js" defer></script>
     <script src="https://jsgame.bbz.cloud/scripts/v1/keyboard.js" defer></script>
-
     <script type="text/javascript" src="script.js" defer></script>
     <title>Game</title>
   </head>
   <body>
+    <div class="menuscreen">
+
+    </div>
+    <div class="sidebar">
+      <div class="menu">
+        <button type="button" name="button" onclick="menutoggle">Menu</button>
+      </div>
+      <div class="points">
+        <p class="punkte">0</p>
+      </div>
+    </div>
     <div class="playground">
-      <p class="punkte">0</p>
       <div class="player"></div>
       <div class="enemy1"></div>
       <div class="enemy2"></div>

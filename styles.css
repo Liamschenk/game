@@ -1,15 +1,64 @@
+:root {
+  --main: black;
+  --accent: gray;
+}
+
 html, body{
-  background-color: white;
+  background-color: var(--accent);
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-.playground {
-  position: relative;
+body{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menuscreen{
+  background-color: var(--main);
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  border: 1px solid black;
+  z-index: 3;
+
+  /*code from video here to hide and show this menu div*/
+
+  display: none;
+}
+
+.sidebar {
+  background-color: var(--main);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 56px;
+}
+
+.menu{
+  margin: 8px;
+}
+
+.menu button{
+  border: none;
+  height: 40px;
+  transition: 0.3s;
+}
+
+.menu button:hover{
+  background-color: brown;
+}
+
+.points{
+  margin: 8px;
+}
+
+.playground {
+  background-color: var(--accent);
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 56px);
 }
 
 .player {
