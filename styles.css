@@ -1,10 +1,10 @@
 :root {
-  --main: black;
+  --main: white;
   --accent: gray;
 }
 
 html, body{
-  background-color: var(--accent);
+  background-color: pinkd;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -22,49 +22,49 @@ body{
   height: 100vh;
   z-index: 3;
 
-  /*code from video here to hide and show this menu div*/
 
   display: none;
 }
 
-.sidebar {
+nav {
   background-color: var(--main);
-  position: relative;
-  display: flex;
-  justify-content: space-between;
   width: 100vw;
   height: 56px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
 }
 
-.menu{
+nav button{
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  transition: 0.2s;
   margin: 8px;
 }
 
-.menu button{
-  border: none;
-  height: 40px;
-  transition: 0.3s;
-}
-
-.menu button:hover{
-  background-color: brown;
+nav button:hover{
+  transition: 0.2s;
+  background-color: black;
+  color: white;
 }
 
 .points{
   margin: 8px;
+  margin-right: 8px;
 }
 
 .playground {
   background-color: var(--accent);
-  position: relative;
   width: 100vw;
   height: calc(100vh - 56px);
+  z-index: 1;
 }
 
 .player {
   width: 48px;
   height: 48px;
-  background: url("character/gigachad.png");
+  background: url("character/player.png");
   background-size: contain;
   position: absolute;
 }
