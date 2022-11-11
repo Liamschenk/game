@@ -9,10 +9,15 @@ html, body{
   overflow: hidden;
 }
 
+body{
+  margin-left: 1vw;
+  margin-top: 1vh;
+}
+
 .playground {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 98vw;
+  height: 98vh;
   border: 1px solid blue;
 }
 
