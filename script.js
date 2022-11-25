@@ -1,7 +1,7 @@
 var playground = document.querySelector(".playground");
 var player = document.querySelector(".player");
 var enemies = document.querySelectorAll(".enemy");
-var shots = document.querySelectorAll(".shot");
+var shot = document.querySelectorAll(".shot");
 
 var displayPoints = document.querySelector(".score");
 var score = 0;
