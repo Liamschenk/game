@@ -35,9 +35,9 @@ body{
   background-color: green;
 }
 
-.shot {
+.stone {
   position: absolute;
-  background-color: yellow;
   width: 20px;
   height: 20px;
+  background-color: gray;
 }
