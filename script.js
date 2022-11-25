@@ -6,6 +6,7 @@ var shots = document.querySelectorAll('.shot')
 // var enemy = document.querySelector('.enemy')
 
 player.style.top = '0px'
+player.style.left = '0px'
 
 function movement(){
   if(keyboard(83)) {
@@ -34,6 +35,14 @@ function loop() {
   //Shot on space press
 
   //Collisions shot/enemy
+
+  window.requestAnimationFrame(loop)
+}
+
+window.requestAnimationFrame(loop)
+
+
+function loop() {
 
   window.requestAnimationFrame(loop)
 }
