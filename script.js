@@ -30,17 +30,17 @@ function movement() {
 function shot() {
   if (keyboard(32)) {
     var h = document.createElement("div");
-    h.classList.add("stone");
+    h.classList.add("shot");
     h.style.top = "0px";
     h.style.left = "100px";
     playground.appendChild(h);
   }
 
-  var stones = document.querySelectorAll(".stone");
-  for (var stone of stones) {
-    stone.style.top = parseInt(stone.style.top) + 5 + "px";
-    if (parseInt(stone.style.top) > 400) {
-      stone.parentNode.removeChild(stone);
+  var shots = document.querySelectorAll(".shot");
+  for (var shot of shots) {
+    shot.style.top = parseInt(shot.style.top) + 5 + "px";
+    if (parseInt(shot.style.top) > 400) {
+      shot.parentNode.removeChild(shot);
     }
   }
 }
