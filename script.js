@@ -27,31 +27,33 @@ function movement() {
   }
 }
 
-function scoreDisplay() {
-  if () {
-    score = score + 1;
-    displayPoints.textContent = score;
-  } else {
+function shot() {
+  if (keyboard(32)) {
+    var h = document.createElement("div");
+    h.classList.add("stone");
+    h.style.top = "0px";
+    h.style.left = "100px";
+    playground.appendChild(h);
+  }
+
+  var stones = document.querySelectorAll(".stone");
+  for (var stone of stones) {
+    stone.style.top = parseInt(stone.style.top) + 5 + "px";
+    if (parseInt(stone.style.top) > 400) {
+      stone.parentNode.removeChild(stone);
+    }
   }
 }
 
+// function scoreDisplay() {
+//   if () {
+//     score = score + 1;
+//     displayPoints.textContent = score;
+//   } else {
+//   }
+// }
+
 function loop() {
-  if (keyboard(32)) {
-    var h = document.createElement('div')
-    h.classList.add('stone')
-    h.style.top = '0px'
-    h.style.left = '100px'
-    playground.appendChild(h)
-  }
-
-  var stonee = document.querySelectorAll('.stone')
-  for(var stone of stonee) {
-    stone.style.top = parseInt(stone.style.top) + 5 + 'px'
-    if(parseInt(stone.style.top) > 400) {
-      stone.parentNode.removeChild(stone)
-    }
-  }
-
   // Movement with dash on shift
   movement();
   //Score
