@@ -10,11 +10,11 @@ body {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
 body {
   margin-left: 1vw;
   margin-top: 1vh;
-=======
+}
+
 body{
 
 }
@@ -50,7 +50,6 @@ header{
 
 .button:hover {
   background: #e7e7e7;
->>>>>>> 95ee65e527c17bc8964f711fed8eb7ee456c56e4
 }
 
 .playground {
@@ -74,14 +73,12 @@ header{
   background-color: green;
 }
 
-<<<<<<< HEAD
 .shot {
   position: absolute;
   width: 5px;
   height: 5px;
   background-color: blue;
-=======
+}
 .score{
   vertical-align: middle;
->>>>>>> 95ee65e527c17bc8964f711fed8eb7ee456c56e4
 }
