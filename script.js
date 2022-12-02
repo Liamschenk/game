@@ -30,6 +30,23 @@ function movement() {
   }
 }
 
+function shot() {
+  if (keyboard(32)) {
+    var h = document.createElement("div");
+    h.classList.add(".shot");
+    h.style.top = "0px";
+    h.style.left = "0px";
+    playground.appendChild(h);
+  }
+  // var enemies = document.querySelectorAll(".enemy");
+  // for (var enemy of enemies) {
+  //   enemy.style.top = parseInt(enemy.style.top) + 5 + "px";
+  //   if (parseInt(enemy.style.top) > 400) {
+  //     enemy.parentNode.removeChild(enemy);
+  //   }
+  // }
+}
+
 // function scoreDisplay() {
 //   if () {
 //     score = score + 1;
@@ -44,7 +61,7 @@ function loop() {
 
   //Score
   // scoreDisplay();
-  
+
   //Shot on space press
 
   //Collisions shot/enemy
