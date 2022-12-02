@@ -3,12 +3,15 @@ var player = document.querySelector(".player");
 var enemies = document.querySelectorAll(".enemy");
 var shot = document.querySelectorAll(".shot");
 
+//Punkte Display
 var displayPoints = document.querySelector(".score");
 var score = 0;
 
+//Movement Funktion
 player.style.top = "0px";
 player.style.left = "0px";
 
+//Movement Funktion
 function movement() {
   if (keyboard(83)) {
     player.style.top = parseInt(player.style.top) + 5 + "px";
@@ -27,24 +30,6 @@ function movement() {
   }
 }
 
-function shot() {
-  if (keyboard(32)) {
-    var h = document.createElement("div");
-    h.classList.add("shot");
-    h.style.top = "0px";
-    h.style.left = "100px";
-    playground.appendChild(h);
-  }
-
-  var shots = document.querySelectorAll(".shot");
-  for (var shot of shots) {
-    shot.style.top = parseInt(shot.style.top) + 5 + "px";
-    if (parseInt(shot.style.top) > 400) {
-      shot.parentNode.removeChild(shot);
-    }
-  }
-}
-
 // function scoreDisplay() {
 //   if () {
 //     score = score + 1;
@@ -56,8 +41,10 @@ function shot() {
 function loop() {
   // Movement with dash on shift
   movement();
+
   //Score
   // scoreDisplay();
+  
   //Shot on space press
 
   //Collisions shot/enemy
