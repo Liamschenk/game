@@ -10,16 +10,54 @@ body {
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 body {
   margin-left: 1vw;
   margin-top: 1vh;
+=======
+body{
+
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbarleft{
+  padding: 8px
+}
+
+.navbarright{
+  padding: 8px
+}
+
+.navbaritem{
+  display: inline;
+  padding: 8px;
+}
+
+.button{
+  border: solid;
+  vertical-align: middle;
+  background-color: transparent;
+  border-color: #e7e7e7;
+  border-radius: 8px;
+  color: black;
+}
+
+.button:hover {
+  background: #e7e7e7;
+>>>>>>> 95ee65e527c17bc8964f711fed8eb7ee456c56e4
 }
 
 .playground {
   position: relative;
-  width: 98vw;
-  height: 98vh;
-  border: 1px solid blue;
+  width: 100vw;
+  height: calc(100vh  - 64px);
+  background-color: blue;
 }
 
 .player {
@@ -36,9 +74,14 @@ body {
   background-color: green;
 }
 
+<<<<<<< HEAD
 .shot {
   position: absolute;
   width: 5px;
   height: 5px;
   background-color: blue;
+=======
+.score{
+  vertical-align: middle;
+>>>>>>> 95ee65e527c17bc8964f711fed8eb7ee456c56e4
 }
