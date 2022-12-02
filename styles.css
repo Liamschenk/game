@@ -10,15 +10,47 @@ html, body{
 }
 
 body{
-  margin-left: 1vw;
-  margin-top: 1vh;
+
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbarleft{
+  padding: 8px
+}
+
+.navbarright{
+  padding: 8px
+}
+
+.navbaritem{
+  display: inline;
+  padding: 8px;
+}
+
+.button{
+  border: solid;
+  vertical-align: middle;
+  background-color: transparent;
+  border-color: #e7e7e7;
+  border-radius: 8px;
+  color: black;
+}
+
+.button:hover {
+  background: #e7e7e7;
 }
 
 .playground {
   position: relative;
-  width: 98vw;
-  height: 98vh;
-  border: 1px solid blue;
+  width: 100vw;
+  height: calc(100vh  - 64px);
+  background-color: blue;
 }
 
 .player {
@@ -35,9 +67,6 @@ body{
   background-color: green;
 }
 
-.stone {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: gray;
+.score{
+  vertical-align: middle;
 }

@@ -8,8 +8,8 @@ var displayPoints = document.querySelector(".score");
 var score = 0;
 
 //Movement Funktion
-player.style.top = "0px";
-player.style.left = "0px";
+player.style.top = "40px";
+player.style.left = "40px";
 
 //Movement Funktion
 function movement() {
@@ -25,7 +25,6 @@ function movement() {
     }
     if (keyboard(87)) {
       player.style.top = parseInt(player.style.top) - 8 + "px";
-    } else {
     }
   }
 }
@@ -44,7 +43,7 @@ function loop() {
 
   //Score
   // scoreDisplay();
-  
+
   //Shot on space press
 
   //Collisions shot/enemy
