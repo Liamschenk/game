@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
   --main: white;
   --accent: gray;
@@ -11,8 +13,9 @@ body {
 }
 
 body {
-  margin-left: 1vw;
-  margin-top: 1vh;
+  margin-left: 16px;
+  margin-top: 16px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 body{
@@ -24,14 +27,16 @@ header{
   align-items: center;
   justify-content: space-between;
   height: 64px;
+  width: calc(100vw - 32px)
 }
 
 .navbarleft{
-  padding: 8px
+  padding: 8px;
+  text-transform: uppercase;
 }
 
 .navbarright{
-  padding: 8px
+  padding: 8px;
 }
 
 .navbaritem{
@@ -46,16 +51,18 @@ header{
   border-color: #e7e7e7;
   border-radius: 8px;
   color: black;
+  transition: 0.2s;
 }
 
 .button:hover {
+  transition: 0.2s;
   background: #e7e7e7;
 }
 
 .playground {
   position: relative;
-  width: 100vw;
-  height: calc(100vh  - 64px);
+  width: calc(100vw - 32px);
+  height: calc(100vh  - 96px);
   background-color: blue;
 }
 
