@@ -54,6 +54,11 @@ header{
   transition: 0.2s;
 }
 
+.button img{
+  height: 16px;
+  vertical-align: middle;
+}
+
 .button:hover {
   transition: 0.2s;
   background: #e7e7e7;
