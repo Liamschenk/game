@@ -75,32 +75,38 @@ header{
   position: relative;
   width: calc(100vw - 32px);
   height: calc(100vh  - 104px);
-  background-color: rgba(80,80,80,0.2);
+  background-image: url("assets/background60.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .player {
   position: absolute;
-  background-color: red;
-  width: 20px;
-  height: 20px;
+  /* background-color: red; */
+  width: 40px;
+  height: 80px;
+  background-image: url("assets/player.png");
+  background-size: contain;
 }
 
 .enemy {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: green;
+  width: 50px;
+  height: 50px;
+  /* background-color: green; */
+  background-image: url("assets/enemy.png");
+  background-size: cover;
 }
 
 .shot {
   position: absolute;
-  width: 8px;
-  height: 4px;
-  /* background-image: url("assets/shot.png");
-  background-size: contain; */
-  border-top-right-radius: 50vh;
+  width: 16px;
+  height: 16px;
+  background-image: url("assets/shot.png");
+  background-size: contain;
+  /* border-top-right-radius: 50vh;
   border-bottom-right-radius: 50vh;
-  background-color: orange;
+  background-color: orange; */
 }
 .score{
   vertical-align: middle;
