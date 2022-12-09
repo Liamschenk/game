@@ -94,9 +94,13 @@ header{
 
 .shot {
   position: absolute;
-  width: 5px;
-  height: 5px;
-  background-color: blue;
+  width: 8px;
+  height: 4px;
+  /* background-image: url("assets/shot.png");
+  background-size: contain; */
+  border-top-right-radius: 50vh;
+  border-bottom-right-radius: 50vh;
+  background-color: orange;
 }
 .score{
   vertical-align: middle;

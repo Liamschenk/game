@@ -8,7 +8,6 @@ var displayPoints = document.querySelector(".score");
 var score = 0;
 
 //Movement Funktion
-
 player.style.top = "40px";
 player.style.left = "40px";
 
@@ -42,9 +41,6 @@ function shotgoofy() {
   var shots = document.querySelectorAll(".shot");
   for (var shot of shots) {
     shot.style.left = parseInt(shot.style.left) + 10 + "px";
-    if (parseInt(shot.style.left) > 800) {
-      shot.parentNode.removeChild(shot);
-    }
   }
 }
 
