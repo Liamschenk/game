@@ -94,7 +94,7 @@ header{
   width: 24px;
   height: 24px;
   background-image: url("assets/shuriken.png");
-  background-size: contain;
+  background-size: cover;
   animation-name: spin;
   animation-duration: 1000ms;
   animation-iteration-count: infinite;
