@@ -6,15 +6,17 @@ var shot = document.querySelector(".shot");
 var timer = new Timer(80);
 var shottimer = new Timer(25);
 
-//Punkte Display
+//Points display
 var displayPoints = document.querySelector(".score");
 var score = 0;
 
-//Movement Funktion
+//Player position
 player.style.top = "40px";
 player.style.left = "40px";
 
-//Movement Funktion
+
+
+//Movement function
 function movement() {
   if (keyboard(83)) {
     player.style.top = parseInt(player.style.top) + 5 + "px";
@@ -32,27 +34,30 @@ function movement() {
   }
 }
 
-function shotgoofy() {
+//Shot function
+function shotfunction() {
   if (shottimer.ready() && keyboard(32)) {
     var h = document.createElement("div");
     h.classList.add("shot");
     h.style.top = player.style.top;
     h.style.left = player.style.left;
     playground.appendChild(h);
+    shottimer = new Timer(25);
   }
 
   var shots = document.querySelectorAll(".shot");
   for (var shot of shots) {
-    shot.style.left = parseInt(shot.style.left) + 10 + "px";
-    if (parseInt(shot.style.left) > 1080) {
+    shot.style.left = parseInt(shot.style.left) + 12 + "px";
+    if (parseInt(shot.style.left) > 720) {
       shot.parentNode.removeChild(shot);
     }
   }
 }
 
-function enemygoofy() {
+//Enemy function
+function enemyfunction() {
   if (timer.ready()) {
-    var random = Math.floor(Math.random() * (800 - 0) + 0);
+    var random = Math.floor(Math.random() * (760 - 40) + 40);
     var h = document.createElement("div");
     h.classList.add("enemy");
     h.style.top = random + "px";
@@ -64,12 +69,26 @@ function enemygoofy() {
 
   for (var enemy of enemies) {
     enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
-    if (parseInt(enemy.style.right) > 800//get div width
+    if (parseInt(enemy.style.right) > 720
   ) {
       enemy.parentNode.removeChild(enemy);
     }
   }
 }
+
+// function collisions(){
+//   if(anyCollision(player, [gegner])) {
+//     alert("Game over!")
+//     return
+//   }
+//
+//   // Kommentar: sobald der Spieler mit Gegner3 oder 4 kollidiert, werden diese gelöscht
+//   var collisions = allCollisions(player, [gegner])
+//   // Kommentar: wir gehen durch alle Kollisionsobjekte durch und löschen sie
+//   for(var collision of collisions) {
+//     collision.parentNode.removeChild(collision)
+//   }
+// }
 
 // function scoreDisplay() {
 //   if () {
@@ -79,15 +98,19 @@ function enemygoofy() {
 //   }
 // }
 
+//Loop function
 function loop() {
   // Movement with dash on shift
   movement();
-  shotgoofy();
-  enemygoofy();
-  //Score
-  // scoreDisplay();
 
   //Shot on space press
+  shotfunction();
+
+  //Enemy spawn function
+  enemyfunction();
+
+  //Score
+  // scoreDisplay();
 
   //Collisions shot/enemy
 

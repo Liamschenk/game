@@ -26,7 +26,8 @@ header{
   align-items: center;
   justify-content: space-between;
   height: 64px;
-  width: calc(100vw - 32px);
+  width: 800px;
+  margin: auto;
 }
 
 .navbarleft{
@@ -63,51 +64,73 @@ header{
   background: #e7e7e7;
 }
 
-.line{
-  height: 2px;
-  width: 100vw;
-  background-color: #e7e7e7;
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
 .playground {
   position: relative;
-  width: calc(100vw - 32px);
-  height: calc(100vh  - 104px);
-  background-image: url("assets/background60.png");
-  background-size: cover;
-  background-position: center;
+  width: 800px;
+  height: 800px;
+  background-color: #e7e7e7;
+  margin: auto;
 }
 
 .player {
   position: absolute;
-  /* background-color: red; */
-  width: 40px;
-  height: 80px;
-  background-image: url("assets/player.png");
-  background-size: contain;
+  width: 32px;
+  height: 32px;
+  background-image: url("assets/greenninja.png");
+  background-size: cover;
 }
 
 .enemy {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  /* background-color: green; */
+  width: 32px;
+  height: 32px;
   background-image: url("assets/enemy.png");
   background-size: cover;
 }
 
 .shot {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  background-image: url("assets/shot.png");
+  width: 24px;
+  height: 24px;
+  background-image: url("assets/shuriken.png");
   background-size: contain;
-  /* border-top-right-radius: 50vh;
-  border-bottom-right-radius: 50vh;
-  background-color: orange; */
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .score{
   vertical-align: middle;
+}
+
+/* .bordertop{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: calc(100vw - 32px);
+  height: 16px;
+  background-image: url("assets/border.png");
+  background-size: contain;
+  opacity: 0.5;
+}
+
+.borderbottom{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: calc(100vw - 32px);
+  height: 16px;
+  background-image: url("assets/border.png");
+  background-size: contain;
+  transform: scaleY(-1);
+  opacity: 0.5;
+} */
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
