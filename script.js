@@ -3,7 +3,7 @@ var player = document.querySelector(".player");
 var enemies = document.querySelectorAll(".enemy");
 var shot = document.querySelector(".shot");
 
-var enemytimer = new Timer(120);
+var enemytimer = new Timer(140);
 var shottimer = new Timer(40);
 
 //Points display
@@ -19,17 +19,17 @@ player.style.left = "40px";
 //Movement function
 function movement() {
   if (keyboard(83)) {
-    player.style.top = parseInt(player.style.top) + 5 + "px";
+    player.style.top = parseInt(player.style.top) + 4 + "px";
   }
   if (keyboard(87)) {
-    player.style.top = parseInt(player.style.top) - 5 + "px";
+    player.style.top = parseInt(player.style.top) - 4 + "px";
   }
   if (keyboard(16)) {
     if (keyboard(83)) {
-      player.style.top = parseInt(player.style.top) + 8 + "px";
+      player.style.top = parseInt(player.style.top) + 6 + "px";
     }
     if (keyboard(87)) {
-      player.style.top = parseInt(player.style.top) - 8 + "px";
+      player.style.top = parseInt(player.style.top) - 6 + "px";
     }
   }
 }
@@ -47,7 +47,7 @@ function shotfunction() {
 
   var shots = document.querySelectorAll(".shot");
   for (var shot of shots) {
-    shot.style.left = parseInt(shot.style.left) + 8 + "px";
+    shot.style.left = parseInt(shot.style.left) + 6 + "px";
     if (parseInt(shot.style.left) > 720) {
       shot.parentNode.removeChild(shot);
     }
