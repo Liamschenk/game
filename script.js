@@ -3,8 +3,8 @@ var player = document.querySelector(".player");
 var enemies = document.querySelectorAll(".enemy");
 var shot = document.querySelector(".shot");
 
-var timer = new Timer(80);
-var shottimer = new Timer(25);
+var enemytimer = new Timer(120);
+var shottimer = new Timer(40);
 
 //Points display
 var displayPoints = document.querySelector(".score");
@@ -40,14 +40,14 @@ function shotfunction() {
     var h = document.createElement("div");
     h.classList.add("shot");
     h.style.top = player.style.top;
-    h.style.left = player.style.left;
+    h.style.left = 80 + "px";
     playground.appendChild(h);
     shottimer = new Timer(25);
   }
 
   var shots = document.querySelectorAll(".shot");
   for (var shot of shots) {
-    shot.style.left = parseInt(shot.style.left) + 12 + "px";
+    shot.style.left = parseInt(shot.style.left) + 8 + "px";
     if (parseInt(shot.style.left) > 720) {
       shot.parentNode.removeChild(shot);
     }
@@ -56,7 +56,7 @@ function shotfunction() {
 
 //Enemy function
 function enemyfunction() {
-  if (timer.ready()) {
+  if (enemytimer.ready()) {
     var random = Math.floor(Math.random() * (760 - 40) + 40);
     var h = document.createElement("div");
     h.classList.add("enemy");
@@ -68,7 +68,7 @@ function enemyfunction() {
   var enemies = document.querySelectorAll(".enemy");
 
   for (var enemy of enemies) {
-    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    enemy.style.right = parseInt(enemy.style.right) + 1 + "px";
     if (parseInt(enemy.style.right) > 720
   ) {
       enemy.parentNode.removeChild(enemy);

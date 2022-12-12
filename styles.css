@@ -13,7 +13,10 @@ body {
 }
 
 body {
-  margin: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -27,7 +30,6 @@ header{
   justify-content: space-between;
   height: 64px;
   width: 800px;
-  margin: auto;
 }
 
 .navbarleft{
@@ -69,7 +71,6 @@ header{
   width: 800px;
   height: 800px;
   background-color: #e7e7e7;
-  margin: auto;
 }
 
 .player {
