@@ -47,7 +47,7 @@ function shotfunction() {
     var h = document.createElement("div");
     h.classList.add("shot");
     h.style.top = player.style.top;
-    h.style.left = 80 + "px";
+    h.style.left = 60 + "px";
     playground.appendChild(h);
     shuriken.play();
     shottimer = new Timer(40);
