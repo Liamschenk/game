@@ -3,6 +3,11 @@ var player = document.querySelector(".player");
 var enemies = document.querySelectorAll(".enemy");
 var shot = document.querySelector(".shot");
 
+var theme = new Audio('assets/sounds/theme.ogg')
+var dash = new Audio('assets/sounds/dash.wav')
+var shuriken = new Audio('assets/sounds/shuriken.wav')
+var gameOver = new Audio('assets/sounds/gameover.wav')
+
 var enemytimer = new Timer(140);
 var shottimer = new Timer(40);
 
@@ -27,9 +32,11 @@ function movement() {
   if (keyboard(16)) {
     if (keyboard(83)) {
       player.style.top = parseInt(player.style.top) + 6 + "px";
+      dash.play();
     }
     if (keyboard(87)) {
       player.style.top = parseInt(player.style.top) - 6 + "px";
+      dash.play();
     }
   }
 }
@@ -42,7 +49,8 @@ function shotfunction() {
     h.style.top = player.style.top;
     h.style.left = 80 + "px";
     playground.appendChild(h);
-    shottimer = new Timer(25);
+    shuriken.play();
+    shottimer = new Timer(40);
   }
 
   var shots = document.querySelectorAll(".shot");
@@ -113,6 +121,9 @@ function loop() {
   // scoreDisplay();
 
   //Collisions shot/enemy
+
+  //Theme music
+  theme.play();
 
   window.requestAnimationFrame(loop);
 }
