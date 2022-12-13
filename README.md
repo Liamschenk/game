@@ -1,2 +1,2 @@
-# NINJA!
-NINJA! Is a fun simple JS game.
+# NINJA! 🥷🏻
+NINJA! Is a fun and simple JS game.
