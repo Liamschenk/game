@@ -16,7 +16,7 @@ var displayPoints = document.querySelector(".score");
 var score = 0;
 
 //Player position
-player.style.top = "40px";
+player.style.top = "370px";
 player.style.left = "40px";
 
 
@@ -24,18 +24,18 @@ player.style.left = "40px";
 //Movement function
 function movement() {
   if (keyboard(83)) {
-    player.style.top = parseInt(player.style.top) + 4 + "px";
+    player.style.top = parseInt(player.style.top) + 6 + "px";
   }
   if (keyboard(87)) {
-    player.style.top = parseInt(player.style.top) - 4 + "px";
+    player.style.top = parseInt(player.style.top) - 6 + "px";
   }
   if (keyboard(16)) {
     if (keyboard(83)) {
-      player.style.top = parseInt(player.style.top) + 6 + "px";
+      player.style.top = parseInt(player.style.top) + 8 + "px";
       dash.play();
     }
     if (keyboard(87)) {
-      player.style.top = parseInt(player.style.top) - 6 + "px";
+      player.style.top = parseInt(player.style.top) - 8 + "px";
       dash.play();
     }
   }
@@ -55,7 +55,7 @@ function shotfunction() {
 
   var shots = document.querySelectorAll(".shot");
   for (var shot of shots) {
-    shot.style.left = parseInt(shot.style.left) + 6 + "px";
+    shot.style.left = parseInt(shot.style.left) + 8 + "px";
     if (parseInt(shot.style.left) > 720) {
       shot.parentNode.removeChild(shot);
     }
@@ -65,7 +65,7 @@ function shotfunction() {
 //Enemy function
 function enemyfunction() {
   if (enemytimer.ready()) {
-    var random = Math.floor(Math.random() * (760 - 40) + 40);
+    var random = Math.floor(Math.random() * (720 - 40) + 40);
     var h = document.createElement("div");
     h.classList.add("enemy");
     h.style.top = random + "px";
@@ -76,7 +76,7 @@ function enemyfunction() {
   var enemies = document.querySelectorAll(".enemy");
 
   for (var enemy of enemies) {
-    enemy.style.right = parseInt(enemy.style.right) + 1 + "px";
+    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
     if (parseInt(enemy.style.right) > 720
   ) {
       enemy.parentNode.removeChild(enemy);

@@ -30,19 +30,15 @@ header{
   justify-content: space-between;
   height: 64px;
   width: 800px;
+  font-size: 24px;
 }
 
 header img{
-  height: 20px;
+  height: 26px;
 }
 
 .navbarleft{
-  padding: 8px;
   text-transform: uppercase;
-}
-
-.navbarright{
-  padding: 8px;
 }
 
 .navbaritem{
@@ -61,7 +57,7 @@ header img{
 }
 
 .button img{
-  height: 16px;
+  height: 18px;
   vertical-align: middle;
 }
 
@@ -74,33 +70,35 @@ header img{
   position: relative;
   width: 800px;
   height: 800px;
-  background: #e7e7e7;
+  background-image: url("assets/tiles.png");
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 .player {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   background-image: url("assets/greenninja.png");
   background-size: cover;
 }
 
 .enemy {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   background-image: url("assets/enemy.png");
   background-size: cover;
 }
 
 .shot {
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   background-image: url("assets/shuriken.png");
   background-size: cover;
   animation-name: spin;
-  animation-duration: 1000ms;
+  animation-duration: 500ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
