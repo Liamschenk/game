@@ -35,6 +35,7 @@ header img{
 
 .navbarleft{
   text-transform: uppercase;
+  display: inline;
 }
 
 .navbaritem{
