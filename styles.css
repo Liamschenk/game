@@ -80,7 +80,7 @@ header img{
   background-size: cover;
 }
 
-.enemy {
+.enemy1, .enemy2, .enemy3, .enemy4, .enemy5 {
   position: absolute;
   width: 48px;
   height: 48px;

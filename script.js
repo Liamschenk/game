@@ -1,13 +1,20 @@
+//Playground, player and shot selector
 var playground = document.querySelector(".playground");
 var player = document.querySelector(".player");
 var shot = document.querySelector(".shot");
 
+//Sounds
 var theme = new Audio("assets/sounds/theme.ogg");
 var dash = new Audio("assets/sounds/dash.wav");
 var shuriken = new Audio("assets/sounds/shuriken.wav");
 var gameOver = new Audio("assets/sounds/gameover.wav");
 
-var enemytimer = new Timer(140);
+var enemytimer1 = new Timer(198);
+var enemytimer2 = new Timer(276);
+var enemytimer3 = new Timer(312);
+var enemytimer4 = new Timer(293);
+var enemytimer5 = new Timer(201);
+
 var shottimer = new Timer(40);
 
 //Points display
@@ -60,17 +67,17 @@ function shotfunction() {
 }
 
 //Enemy function
-function enemyfunction() {
-  if (enemytimer.ready()) {
+function enemy1() {
+  if (enemytimer1.ready()) {
     var random = Math.floor(Math.random() * (720 - 40) + 40);
     var h = document.createElement("div");
-    h.classList.add("enemy");
+    h.classList.add("enemy1");
     h.style.top = random + "px";
     h.style.right = "40px";
     playground.appendChild(h);
   }
 
-  var enemies = document.querySelectorAll(".enemy");
+  var enemies = document.querySelectorAll(".enemy1");
 
   for (var enemy of enemies) {
     enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
@@ -80,14 +87,83 @@ function enemyfunction() {
   }
 }
 
-function collisions() {
-  //Collisions shot/enemy
-  var collisions = allCollisions(enemies, [shot]);
-  // Kommentar: wir gehen durch alle Kollisionsobjekte durch und löschen sie
-  for (var collision of collisions) {
-    collision.parentNode.removeChild(collision);
-    score = score + 1;
-    displayPoints.textContent = score;
+function enemy2() {
+  if (enemytimer2.ready()) {
+    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var h = document.createElement("div");
+    h.classList.add("enemy2");
+    h.style.top = random + "px";
+    h.style.right = "40px";
+    playground.appendChild(h);
+  }
+
+  var enemies = document.querySelectorAll(".enemy2");
+
+  for (var enemy of enemies) {
+    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    if (parseInt(enemy.style.right) > 720) {
+      enemy.parentNode.removeChild(enemy);
+    }
+  }
+}
+
+function enemy3() {
+  if (enemytimer3.ready()) {
+    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var h = document.createElement("div");
+    h.classList.add("enemy3");
+    h.style.top = random + "px";
+    h.style.right = "40px";
+    playground.appendChild(h);
+  }
+
+  var enemies = document.querySelectorAll(".enemy3");
+
+  for (var enemy of enemies) {
+    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    if (parseInt(enemy.style.right) > 720) {
+      enemy.parentNode.removeChild(enemy);
+    }
+  }
+}
+
+function enemy4() {
+  if (enemytimer4.ready()) {
+    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var h = document.createElement("div");
+    h.classList.add("enemy4");
+    h.style.top = random + "px";
+    h.style.right = "40px";
+    playground.appendChild(h);
+  }
+
+  var enemies = document.querySelectorAll(".enemy4");
+
+  for (var enemy of enemies) {
+    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    if (parseInt(enemy.style.right) > 720) {
+      enemy.parentNode.removeChild(enemy);
+    }
+  }
+}
+
+function enemy5() {
+  if (enemytimer5.ready()) {
+    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var h = document.createElement("div");
+    h.classList.add("enemy5");
+    h.style.top = random + "px";
+    h.style.right = "40px";
+    playground.appendChild(h);
+  }
+
+  var enemies = document.querySelectorAll(".enemy5");
+
+  for (var enemy of enemies) {
+    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    if (parseInt(enemy.style.right) > 720) {
+      enemy.parentNode.removeChild(enemy);
+    }
   }
 }
 
@@ -97,7 +173,11 @@ function loop() {
   movementfunction();
 
   //Enemy spawn function
-  enemyfunction();
+  enemy1();
+  enemy2();
+  enemy3();
+  enemy4();
+  enemy5();
 
   //Shot on space press
   shotfunction();
