@@ -3,6 +3,13 @@ var playground = document.querySelector(".playground");
 var player = document.querySelector(".player");
 var shot = document.querySelector(".shot");
 
+//Testenemy
+// var enemy1 = document.querySelector('.enemy1')
+// var enemy2 = document.querySelector('.enemy2')
+// var enemy3 = document.querySelector('.enemy3')
+// var enemy4 = document.querySelector('.enemy4')
+// var enemy5 = document.querySelector('.enemy5')
+
 //Sounds
 var theme = new Audio("assets/sounds/theme.ogg");
 var dash = new Audio("assets/sounds/dash.wav");
@@ -10,11 +17,11 @@ var shuriken = new Audio("assets/sounds/shuriken.wav");
 var gameOver = new Audio("assets/sounds/gameover.wav");
 
 //Timers for enemy spawn
-var enemytimer1 = new Timer(400);
-var enemytimer2 = new Timer(480);
-var enemytimer3 = new Timer(526);
-var enemytimer4 = new Timer(460);
-var enemytimer5 = new Timer(420);
+var enemytimer1 = new Timer(350);
+var enemytimer2 = new Timer(430);
+var enemytimer3 = new Timer(496);
+var enemytimer4 = new Timer(410);
+var enemytimer5 = new Timer(370);
 
 //Timer for shot delay
 var shottimer = new Timer(40);
@@ -169,6 +176,15 @@ function enemy5() {
   }
 }
 
+function collisions() {
+  // Kommentar: sobald der Spieler mit Gegner3 oder 4 kollidiert, werden diese gelöscht
+  var collisions = allCollisions(shot, [testenemy1, testenemy2])
+  // Kommentar: wir gehen durch alle Kollisionsobjekte durch und löschen sie
+  for(var collision of collisions) {
+    collision.parentNode.removeChild(collision)
+  }
+}
+
 //Loop function
 function loop() {
   // Movement
@@ -183,6 +199,9 @@ function loop() {
 
   //Shot
   bullet();
+
+  //Collisions
+  // collisions();
 
   //Theme music
   theme.play();
