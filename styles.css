@@ -67,9 +67,8 @@ header img{
   position: relative;
   width: 800px;
   height: 800px;
-  background-image: url("assets/tiles.png");
-  background-size: contain;
-  background-repeat: repeat;
+  background-image: url("assets/background.png");
+  background-size: cover;
 }
 
 .player {

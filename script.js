@@ -10,11 +10,11 @@ var shuriken = new Audio("assets/sounds/shuriken.wav");
 var gameOver = new Audio("assets/sounds/gameover.wav");
 
 //Timers for enemy spawn
-var enemytimer1 = new Timer(200);
-var enemytimer2 = new Timer(280);
-var enemytimer3 = new Timer(326);
-var enemytimer4 = new Timer(260);
-var enemytimer5 = new Timer(220);
+var enemytimer1 = new Timer(400);
+var enemytimer2 = new Timer(480);
+var enemytimer3 = new Timer(526);
+var enemytimer4 = new Timer(460);
+var enemytimer5 = new Timer(420);
 
 //Timer for shot delay
 var shottimer = new Timer(40);
@@ -82,7 +82,7 @@ function enemy1() {
   var enemies = document.querySelectorAll(".enemy1");
 
   for (var enemy of enemies) {
-    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    enemy.style.right = parseInt(enemy.style.right) + 1 + "px";
     if (parseInt(enemy.style.right) > 720) {
       enemy.parentNode.removeChild(enemy);
     }
@@ -102,7 +102,7 @@ function enemy2() {
   var enemies = document.querySelectorAll(".enemy2");
 
   for (var enemy of enemies) {
-    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    enemy.style.right = parseInt(enemy.style.right) + 1 + "px";
     if (parseInt(enemy.style.right) > 720) {
       enemy.parentNode.removeChild(enemy);
     }
@@ -122,7 +122,7 @@ function enemy3() {
   var enemies = document.querySelectorAll(".enemy3");
 
   for (var enemy of enemies) {
-    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    enemy.style.right = parseInt(enemy.style.right) + 1 + "px";
     if (parseInt(enemy.style.right) > 720) {
       enemy.parentNode.removeChild(enemy);
     }
@@ -142,7 +142,7 @@ function enemy4() {
   var enemies = document.querySelectorAll(".enemy4");
 
   for (var enemy of enemies) {
-    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    enemy.style.right = parseInt(enemy.style.right) + 1 + "px";
     if (parseInt(enemy.style.right) > 720) {
       enemy.parentNode.removeChild(enemy);
     }
@@ -162,7 +162,7 @@ function enemy5() {
   var enemies = document.querySelectorAll(".enemy5");
 
   for (var enemy of enemies) {
-    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    enemy.style.right = parseInt(enemy.style.right) + 1 + "px";
     if (parseInt(enemy.style.right) > 720) {
       enemy.parentNode.removeChild(enemy);
     }
