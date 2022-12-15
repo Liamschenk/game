@@ -1,7 +1,6 @@
 var playground = document.querySelector(".playground");
 var player = document.querySelector(".player");
 var shot = document.querySelector(".shot");
-var enemiestest = document.querySelectorAll(".enemy");
 
 var theme = new Audio("assets/sounds/theme.ogg");
 var dash = new Audio("assets/sounds/dash.wav");
