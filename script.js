@@ -9,6 +9,7 @@ var dash = new Audio("assets/sounds/dash.wav");
 var shuriken = new Audio("assets/sounds/shuriken.wav");
 var gameOver = new Audio("assets/sounds/gameover.wav");
 
+//Timers for enemy spawn
 var enemytimer1 = new Timer(198);
 var enemytimer2 = new Timer(276);
 var enemytimer3 = new Timer(312);
@@ -69,7 +70,7 @@ function shotfunction() {
 //Enemy function
 function enemy1() {
   if (enemytimer1.ready()) {
-    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var random = Math.floor(Math.random() * (124 - 40) + 40);
     var h = document.createElement("div");
     h.classList.add("enemy1");
     h.style.top = random + "px";
@@ -89,7 +90,7 @@ function enemy1() {
 
 function enemy2() {
   if (enemytimer2.ready()) {
-    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var random = Math.floor(Math.random() * (268 - 164) + 164);
     var h = document.createElement("div");
     h.classList.add("enemy2");
     h.style.top = random + "px";
@@ -109,7 +110,7 @@ function enemy2() {
 
 function enemy3() {
   if (enemytimer3.ready()) {
-    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var random = Math.floor(Math.random() * (412 - 308) + 308);
     var h = document.createElement("div");
     h.classList.add("enemy3");
     h.style.top = random + "px";
@@ -129,7 +130,7 @@ function enemy3() {
 
 function enemy4() {
   if (enemytimer4.ready()) {
-    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var random = Math.floor(Math.random() * (556 - 452) + 452);
     var h = document.createElement("div");
     h.classList.add("enemy4");
     h.style.top = random + "px";
@@ -149,7 +150,7 @@ function enemy4() {
 
 function enemy5() {
   if (enemytimer5.ready()) {
-    var random = Math.floor(Math.random() * (720 - 40) + 40);
+    var random = Math.floor(Math.random() * (720 - 596) + 596);
     var h = document.createElement("div");
     h.classList.add("enemy5");
     h.style.top = random + "px";
