@@ -10,11 +10,11 @@ var shuriken = new Audio("assets/sounds/shuriken.wav");
 var gameOver = new Audio("assets/sounds/gameover.wav");
 
 //Timers for enemy spawn
-var enemytimer1 = new Timer(198);
-var enemytimer2 = new Timer(276);
-var enemytimer3 = new Timer(312);
-var enemytimer4 = new Timer(293);
-var enemytimer5 = new Timer(201);
+var enemytimer1 = new Timer(200);
+var enemytimer2 = new Timer(280);
+var enemytimer3 = new Timer(326);
+var enemytimer4 = new Timer(260);
+var enemytimer5 = new Timer(220);
 
 var shottimer = new Timer(40);
 
@@ -27,27 +27,27 @@ player.style.top = "370px";
 player.style.left = "40px";
 
 //Movement function
-function movementfunction() {
+function movement() {
   if (keyboard(83)) {
-    player.style.top = parseInt(player.style.top) + 6 + "px";
+    player.style.top = parseInt(player.style.top) + 3 + "px";
   }
   if (keyboard(87)) {
-    player.style.top = parseInt(player.style.top) - 6 + "px";
+    player.style.top = parseInt(player.style.top) - 3 + "px";
   }
   if (keyboard(16)) {
     if (keyboard(83)) {
-      player.style.top = parseInt(player.style.top) + 8 + "px";
+      player.style.top = parseInt(player.style.top) + 6 + "px";
       dash.play();
     }
     if (keyboard(87)) {
-      player.style.top = parseInt(player.style.top) - 8 + "px";
+      player.style.top = parseInt(player.style.top) - 6 + "px";
       dash.play();
     }
   }
 }
 
 //Shot function
-function shotfunction() {
+function bullet() {
   if (shottimer.ready() && keyboard(32)) {
     var h = document.createElement("div");
     h.classList.add("shot");
@@ -67,7 +67,7 @@ function shotfunction() {
   }
 }
 
-//Enemy function
+//Enemy functions
 function enemy1() {
   if (enemytimer1.ready()) {
     var random = Math.floor(Math.random() * (124 - 40) + 40);
@@ -171,9 +171,9 @@ function enemy5() {
 //Loop function
 function loop() {
   // Movement with dash on shift
-  movementfunction();
+  movement();
 
-  //Enemy spawn function
+  //Enemy spawn functions
   enemy1();
   enemy2();
   enemy3();
@@ -181,7 +181,7 @@ function loop() {
   enemy5();
 
   //Shot on space press
-  shotfunction();
+  bullet();
 
   //Theme music
   theme.play();
