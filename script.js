@@ -16,6 +16,7 @@ var enemytimer3 = new Timer(326);
 var enemytimer4 = new Timer(260);
 var enemytimer5 = new Timer(220);
 
+//Timer for shot delay
 var shottimer = new Timer(40);
 
 //Points display
@@ -46,7 +47,7 @@ function movement() {
   }
 }
 
-//Shot function
+//Bullet function
 function bullet() {
   if (shottimer.ready() && keyboard(32)) {
     var h = document.createElement("div");
@@ -170,7 +171,7 @@ function enemy5() {
 
 //Loop function
 function loop() {
-  // Movement with dash on shift
+  // Movement
   movement();
 
   //Enemy spawn functions
@@ -180,7 +181,7 @@ function loop() {
   enemy4();
   enemy5();
 
-  //Shot on space press
+  //Shot
   bullet();
 
   //Theme music
