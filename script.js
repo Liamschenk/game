@@ -13,7 +13,7 @@ const gameOver = new Audio("assets/sounds/gameover.wav");
 
 //Timer for shot delay
 let shottimer = new Timer(40);
-let enemytimer = new Timer(80);
+let enemytimer = new Timer(60);
 
 //Points display
 let scoreDisplay = document.querySelector(".score");
@@ -89,7 +89,7 @@ function blaze() {
 
   //Move and delete enemies
   for (let enemy of enemies) {
-    enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
+    enemy.style.right = parseInt(enemy.style.right) + 3 + "px";
     if (parseInt(enemy.style.right) > 720) {
       enemy.parentNode.removeChild(enemy);
     }
