@@ -7,6 +7,7 @@ var shot = document.querySelector(".shot");
 var theme = new Audio("assets/sounds/theme.ogg");
 var dash = new Audio("assets/sounds/dash.wav");
 var shuriken = new Audio("assets/sounds/shuriken.wav");
+var kill = new Audio("assets/sounds/kill.wav");
 var gameOver = new Audio("assets/sounds/gameover.wav");
 
 //Timer for shot delay
