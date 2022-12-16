@@ -1,3 +1,3 @@
-# NINJA! ![Image](https://github.com/liamschenk/game/blob/main/assets/faceset.png)
-<img src="https://github.com/liamschenk/game/blob/main/assets/faceset.png" width="100" height="100">
+# NINJA! <img src="https://github.com/liamschenk/game/blob/main/assets/faceset.png" width="24" height="24">
+
 NINJA! Is a fun and simple JS game.
