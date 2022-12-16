@@ -54,13 +54,38 @@ header img{
   background-size: cover;
 }
 
-.enemy{
+.enemy1, .enemy2, .enemy3, .enemy4, .enemy5 {
   position: absolute;
   width: 48px;
   height: 48px;
   background-image: url("assets/enemy.png");
   background-size: cover;
 }
+
+/* .test1 {
+  top: 40px;
+  right: 80px;
+}
+
+.test2 {
+  top: 120px;
+  right: 80px;
+}
+
+.test3 {
+  top: 200px;
+  right: 80px;
+}
+
+.test4 {
+  top: 280px;
+  right: 80px;
+}
+
+.test5 {
+  top: 360px;
+  right: 80px;
+} */
 
 .shot {
   position: absolute;
