@@ -1,22 +1,23 @@
 //Playground, player and shot selector
-var playground = document.querySelector(".playground");
-var player = document.querySelector(".player");
-var shot = document.querySelector(".shot");
+const playground = document.querySelector(".playground");
+const player = document.querySelector(".player");
+const shot = document.querySelectorAll(".shot");
+const enemy = document.querySelectorAll(".enemy");
 
 //Sounds
-var theme = new Audio("assets/sounds/theme.ogg");
-var dash = new Audio("assets/sounds/dash.wav");
-var shuriken = new Audio("assets/sounds/shuriken.wav");
-var kill = new Audio("assets/sounds/kill.wav");
-var gameOver = new Audio("assets/sounds/gameover.wav");
+const theme = new Audio("assets/sounds/theme.ogg");
+const dash = new Audio("assets/sounds/dash.wav");
+const shuriken = new Audio("assets/sounds/shuriken.wav");
+const kill = new Audio("assets/sounds/kill.wav");
+const gameOver = new Audio("assets/sounds/gameover.wav");
 
 //Timer for shot delay
-var shottimer = new Timer(40);
-var enemytimer = new Timer(140);
+let shottimer = new Timer(40);
+let enemytimer = new Timer(80);
 
 //Points display
-var displayPoints = document.querySelector(".score");
-var score = 0;
+let scoreDisplay = document.querySelector(".score");
+let score = 0;
 
 //Player position
 player.style.top = "370px";
@@ -24,17 +25,24 @@ player.style.left = "40px";
 
 //Movement function
 function movement() {
+  //Move down with s key
   if (keyboard(83)) {
     player.style.top = parseInt(player.style.top) + 6 + "px";
   }
+
+  //Move up with w key
   if (keyboard(87)) {
     player.style.top = parseInt(player.style.top) - 6 + "px";
   }
+
+  //Check if shift is pressed
   if (keyboard(16)) {
+    //Dash down with s key
     if (keyboard(83)) {
       player.style.top = parseInt(player.style.top) + 8 + "px";
       dash.play();
     }
+    //Dash up with s key
     if (keyboard(87)) {
       player.style.top = parseInt(player.style.top) - 8 + "px";
       dash.play();
@@ -44,8 +52,9 @@ function movement() {
 
 //Bullet function
 function bullet() {
+  //Create shot when space is pressed
   if (shottimer.ready() && keyboard(32)) {
-    var h = document.createElement("div");
+    let h = document.createElement("div");
     h.classList.add("shot");
     h.style.top = player.style.top;
     h.style.left = 64 + "px";
@@ -53,8 +62,10 @@ function bullet() {
     shuriken.play();
   }
 
-  var shots = document.querySelectorAll(".shot");
-  for (var shot of shots) {
+  let shots = document.querySelectorAll(".shot");
+
+  //Move and delete shot
+  for (let shot of shots) {
     shot.style.left = parseInt(shot.style.left) + 10 + "px";
     if (parseInt(shot.style.left) > 720) {
       shot.parentNode.removeChild(shot);
@@ -63,19 +74,21 @@ function bullet() {
 }
 
 //Enemy functions
-function enemy() {
+function blaze() {
+  //Create enemies when timer is ready
   if (enemytimer.ready()) {
-    var random = Math.floor(Math.random() * (720 - 40) + 40);
-    var h = document.createElement("div");
+    let random = Math.floor(Math.random() * (720 - 40) + 40);
+    let h = document.createElement("div");
     h.classList.add("enemy");
     h.style.top = random + "px";
     h.style.right = "40px";
     playground.appendChild(h);
   }
 
-  var enemies = document.querySelectorAll(".enemy");
+  let enemies = document.querySelectorAll(".enemy");
 
-  for (var enemy of enemies) {
+  //Move and delete enemies
+  for (let enemy of enemies) {
     enemy.style.right = parseInt(enemy.style.right) + 2 + "px";
     if (parseInt(enemy.style.right) > 720) {
       enemy.parentNode.removeChild(enemy);
@@ -83,12 +96,31 @@ function enemy() {
   }
 }
 
-function collisions() {
-  // Kommentar: sobald der Spieler mit Gegner3 oder 4 kollidiert, werden diese gelöscht
-  var collisions = allCollisions(shot, [testenemy1, testenemy2])
-  // Kommentar: wir gehen durch alle Kollisionsobjekte durch und löschen sie
-  for(var collision of collisions) {
-    collision.parentNode.removeChild(collision)
+function colshot() {
+  let shots = document.querySelectorAll(".shot");
+  let enemies = document.querySelectorAll(".enemy");
+  //If shot and enemy are colliding remove enemy
+  for(let shot of shots) {
+    let collisions = allCollisions(shot, enemies)
+      //Remove enemy and play sound
+      for(let collision of collisions) {
+        collision.parentNode.removeChild(collision)
+        kill.play();
+        score = score + 1;
+        scoreDisplay.textContent = score
+      }
+  }
+}
+
+function colplayer() {
+  let player = document.querySelector(".player");
+  let enemies = document.querySelectorAll(".enemy");
+
+  //If player and enemy collide game is over
+  if(anyCollision(player, enemies)) {
+    alert("Game over!")
+    gameOver.play();
+    return true;
   }
 }
 
@@ -98,15 +130,20 @@ function loop() {
   movement();
 
   //Enemy spawn functions
-  enemy();
+  blaze();
 
   //Shot
   bullet();
 
-  //Collisions
-  // collisions();
+  //Collision between shot and enemy
+  colshot();
 
-  //Theme music
+  //Collision between player and enemy
+  if (colplayer()) {
+    return;
+  }
+
+  //Music
   theme.play();
 
   window.requestAnimationFrame(loop);

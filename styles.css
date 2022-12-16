@@ -24,13 +24,35 @@ header{
   font-size: 24px;
 }
 
-header img{
-  height: 26px;
+.button{
+  border: none;
+  border: 2px solid #D3D3D3;
+  background-color: white;
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
+  vertical-align: middle;
+  transition: 0.3s;
 }
 
-.navbarleft{
+.button img{
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
+
+.button:hover {
+  transition: 0.3s;
+  background-color: #D3D3D3;
+}
+
+.navbarleft, .navbarright{
   text-transform: uppercase;
   display: inline;
+}
+
+.navbarleft img {
+  height: 24px;
 }
 
 .navbaritem{
@@ -73,6 +95,7 @@ header img{
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
 .score{
   vertical-align: middle;
 }
